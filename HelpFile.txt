@@ -1,0 +1,73 @@
+Student Records Management System Using Java Swing and MySQL
+
+1. Project Description
+This project is a graphical desktop application developed using Java Swing and JDBC. It provides an intuitive interface for managing student records and connects to a MySQL database to securely store, update, search, and delete student data in real time.
+
+2. Technologies Used
+- Java
+- Java Swing (GUI)
+- JDBC (Java Database Connectivity)
+- MySQL
+- SQL
+
+3. Features
+1. Add new student records (Name, Age, Course, Email).
+2. View and refresh all student records in an interactive table.
+3. Update existing student records.
+4. Delete student records with a confirmation prompt.
+5. Search student records by name or ID.
+
+4. Database Structure
+The application uses a database named student_db and a table named students.
+
+Students Table
+- id — unique student ID (Auto-incremented primary key)
+- name — full name of the student
+- age — age of the student
+- course — course or program name
+- email — email address of the student
+
+5. JDBC Connection Setup
+JDBC allows a Java application to connect to and interact with a database.
+
+Step 1: Install Java and MySQL
+Install a Java JDK and MySQL Server. Make sure MySQL is running.
+
+Step 2: Download MySQL Connector/J
+Download the JDBC driver from:
+https://dev.mysql.com/downloads/connector/j/
+Extract the downloaded ZIP file and place the connector JAR file inside the project's lib folder.
+
+Step 3: Configure the Connection
+The application uses the following connection details:
+private static final String DB_URL = "jdbc:mysql://localhost:3306/student_db?useSSL=false&serverTimezone=UTC";
+private static final String DB_USER = "root";
+private static final String DB_PASSWORD = "your_password";
+
+The URL connects to the local MySQL server on port 3306 and targets the student_db database. The username and password must match your own local MySQL configuration.
+
+Step 4: Establish the Connection
+The application uses:
+Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+
+A Connection object represents the active session between the Java application and the MySQL server.
+
+6. SQL Concepts Used
+- CREATE DATABASE and CREATE TABLE
+- INSERT INTO
+- SELECT
+- UPDATE
+- DELETE
+- WHERE and LIKE clauses
+- Primary keys with AUTO_INCREMENT
+
+7. How to Compile and Run
+1. Open your project folder in VS Code.
+2. Ensure the MySQL connector JAR is added to your project's Referenced Libraries or .vscode/settings.json.
+3. Open StudentManagementApp.java and click Run above the main method or press F5.
+
+8. Output Screenshots
+The assets folder contains screenshots demonstrating the application's graphical user interface, form inputs, and live table records.
+
+9. Author
+Toshitaa Ashish
